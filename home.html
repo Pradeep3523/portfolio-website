@@ -6,10 +6,12 @@
   <title>Pradeep Paudel Portfolio</title>
   <link rel="stylesheet" href="styles.css" />
   <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+
 </head>
 <body class="font-sans">
 
-  <marquee behavior="scroll" direction="left" class="bg-blue-300 py-2 text-white font-semibold">
+  <marquee behavior="scroll" direction="left">
     Welcome to Pradeep Paudel's Portfolio | Web Developer & Graphic Designer
   </marquee>
 
@@ -40,11 +42,21 @@
     </div>
   </header>
 
-  <section id="#home" class="text-center py-16">
+  <section id="home" class="text-center py-16">
+
     <img src="image/4.jpg" alt="Profile" class="mx-auto rounded-full mb-4 shadow-lg w-40 h-40 object-cover" />
     <h2 class="text-3xl font-bold">Hi, I'm Pradeep Paudel</h2>
     <p class="text-lg text-gray-700">Web Developer & Graphic Designer</p>
-    <p class="text-gray-600 mt-4 text-justify m-10">Welcome to my personal space online. I create fast, beautiful, and accessible websites with an eye for design and performance.
+    <div class="flex justify-center mt-8">
+  <lottie-player 
+    src="https://assets7.lottiefiles.com/packages/lf20_jcikwtux.json" 
+    background="transparent"  
+    speed="1"  
+    style="width: 300px; height: 300px;"  
+    loop autoplay>
+  </lottie-player>
+    </div>
+    <p class="text-black-700 mt-10 text-justify m-20">Welcome to my personal space online. I create fast, beautiful, and accessible websites with an eye for design and performance.
       Pradip Paudel is a dedicated and creative student currently pursuing his Class 12 under the Nepal Education Board (NEB) with a strong passion for web development and graphic design. He is skilled in crafting responsive websites and visually appealing designs, and he is actively building projects such as a personal portfolio and a multi-page school website.
 
 In addition to his technical interests, Pradip is actively engaged in community service through the Rotaract Club of Parbat, where he has played key roles in organizing major events like the 15th Charter Day and Handover Program. His involvement in Rotaract reflects his leadership, communication, and event management abilities.
@@ -67,7 +79,7 @@ He is known for being self-motivated, detail-oriented, and committed to continuo
       </ul>
     </div>
     <div class="mt-8">
-      <a href="about.html" class="bg-blue-500 text-white px-6 py-2 rounded hover:bg-blue-600">Learn More About Me</a>
+      <a href="image/resume.pdf" class="bg-blue-500 text-white px-6 py-2 rounded hover:bg-blue-600">Download CV</a>
   </section>
  <footer class="bg-gradient-to-r from-indigo-100 via-purple-100 to-pink-100 py-8">
   <div class="max-w-4xl mx-auto flex flex-col items-center space-y-4 px-4 text-center">

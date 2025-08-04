@@ -1,6 +1,6 @@
  body {
-      background-color: #e0f2fe;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #c2d0d0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
     }
     .hover-underline:hover {
       text-decoration: underline;
@@ -33,4 +33,30 @@
     }
     html {
   scroll-behavior: smooth;
+} 
+.code-animation::before,
+.code-animation::after {
+  content: "</>";
+  position: absolute;
+  font-size: 2rem;
+  font-family: monospace;
+  color: rgba(0, 255, 100, 0.1);
+  animation: float 15s linear infinite;
+  user-select: none;
+}
+
+.code-animation::after {
+  content: "{}";
+  top: 60%;
+  left: 30%;
+  font-size: 3rem;
+  color: rgba(255, 255, 255, 0.05);
+  animation-duration: 18s;
+}
+marquee{
+  background-color: cadetblue;
+  color: white;
+}
+.marquee:.hover{
+  color: green;
 }
