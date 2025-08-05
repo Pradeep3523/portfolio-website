@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Pradeep Paudel Portfolio - Contact</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="font-sans bg-gray-50">
+
+  <marquee behavior="scroll" direction="left">
+    Welcome to Pradeep Paudel's Portfolio | Web Developer & Graphic Designer
+  </marquee>
+
+  <header class="bg-white shadow-md">
+    <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+      <h1 class="text-xl font-bold">PRADEEP PAUDEL</h1>
+      <div class="hidden md:flex gap-6">
+        <a href="index.html" class="hover:text-indigo-600 transition">Home</a>
+        <a href="about.html" class="hover:text-indigo-600 transition">About</a>
+        <a href="projects.html" class="hover:text-indigo-600 transition">Projects</a>
+        <a href="whyme.html" class="hover:text-indigo-600 transition">Why Me</a>
+        <a href="contact.html" class="hover:text-indigo-600 transition font-semibold underline">Contact</a>
+      </div>
+      <div class="md:hidden">
+        <button id="menu-toggle" aria-label="Toggle menu">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M4 6h16M4 12h16M4 18h16"></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <div id="mobile-menu" class="md:hidden hidden bg-white px-4 pb-4">
+      <a href="index.html" class="block py-2 hover:text-indigo-600 transition">Home</a>
+      <a href="about.html" class="block py-2 hover:text-indigo-600 transition">About</a>
+      <a href="projects.html" class="block py-2 hover:text-indigo-600 transition">Projects</a>
+      <a href="whyme.html" class="block py-2 hover:text-indigo-600 transition">Why Me</a>
+      <a href="contact.html" class="block py-2 hover:text-indigo-600 transition font-semibold underline">Contact</a>
+    </div>
+  </header>
+  <body class="font-sans bg-gray-50 p-6">
+  <header class="mb-8">
+    <h1 class="text-3xl font-bold text-indigo-700">Submission Details</h1>
+    <p class="mt-2 text-gray-700">Thank you for contacting me! Here are the details you submitted:</p>
+  </header>
+
+  <main class="max-w-xl bg-white p-6 rounded shadow-md">
+    <div id="details" class="space-y-4 text-gray-800"></div>
+
+    <div class="mt-8">
+      <a href="contact.html" class="inline-block bg-indigo-600 hover:bg-indigo-700 text-white px-6 py-2 rounded shadow">
+        Back to Contact Form
+      </a>
+    </div>
+  </main>
+
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const detailsDiv = document.getElementById('details');
+
+    // Map form field labels
+    const labels = {
+      firstName: 'First Name',
+      surname: 'Surname',
+      gender: 'Gender',
+      country: 'Country',
+      mobile: 'Mobile Number',
+      email: 'Email Address',
+      address: 'Address',
+      message: 'Message',
+      subscribe: 'Subscribed to Newsletter',
+      updates: 'Requested Updates',
+      terms: 'Agreed to Terms',
+      privacy: 'Agreed to Privacy Policy',
+    };
+
+    // Build details display
+    for (const [key, label] of Object.entries(labels)) {
+      let value = params.get(key);
+
+      if (value === null) continue;
+
+      // For checkboxes, show Yes/No
+      if (['subscribe', 'updates', 'terms', 'privacy'].includes(key)) {
+        value = value === 'on' ? 'Yes' : 'No';
+      }
+
+      const p = document.createElement('p');
+      p.innerHTML = `<strong>${label}:</strong> ${value}`;
+      detailsDiv.appendChild(p);
+    }
+  </script>
+</body>
+
+</html>
