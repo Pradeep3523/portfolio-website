@@ -43,17 +43,14 @@
       <a href="contact.html" class="block py-2 hover:text-indigo-600 transition font-semibold underline">Contact</a>
     </div>
   </header>
-  <body class="font-sans bg-gray-50 p-6">
-  <header class="mb-8">
-    <h1 class="text-3xl font-bold text-indigo-700">Submission Details</h1>
-    <p class="mt-2 text-gray-700">Thank you for contacting me! Here are the details you submitted:</p>
-  </header>
+  <main
+    class="max-w-3xl bg-white p-6 sm:p-8 rounded shadow-md mx-auto flex flex-col gap-6 text-gray-800">
 
-  <main class="max-w-xl bg-white p-6 rounded shadow-md">
-    <div id="details" class="space-y-4 text-gray-800"></div>
+    <div id="details" class="space-y-4"></div>
 
-    <div class="mt-8">
-      <a href="contact.html" class="inline-block bg-indigo-600 hover:bg-indigo-700 text-white px-6 py-2 rounded shadow">
+    <div class="mt-6 sm:mt-8">
+      <a href="contact.html"
+        class="block sm:inline-block w-full sm:w-auto text-center bg-indigo-600 hover:bg-indigo-700 text-white px-6 py-3 rounded shadow transition">
         Back to Contact Form
       </a>
     </div>
@@ -79,10 +76,8 @@
       privacy: 'Agreed to Privacy Policy',
     };
 
-    // Build details display
     for (const [key, label] of Object.entries(labels)) {
       let value = params.get(key);
-
       if (value === null) continue;
 
       // For checkboxes, show Yes/No
@@ -91,6 +86,7 @@
       }
 
       const p = document.createElement('p');
+      p.classList.add('text-base', 'sm:text-lg');
       p.innerHTML = `<strong>${label}:</strong> ${value}`;
       detailsDiv.appendChild(p);
     }
