@@ -57,6 +57,18 @@ marquee{
   background-color: cadetblue;
   color: white;
 }
-.marquee:.hover{
+.marquee .over{
   color: green;
+}
+.real{
+  display: flex;
+  padding: 5px;
+  justify-content: right;
+  padding: 1rem;
+}
+#datetime {
+  font-size: 20px;
+  font-weight: bold;
+  color: red;
+  margin: 10px 0;
 }

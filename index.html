@@ -9,8 +9,6 @@
   <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
 
 </head>
-<body class="font-sans">
-
   <marquee behavior="scroll" direction="left">
     Welcome to Pradeep Paudel's Portfolio | Web Developer & Graphic Designer
   </marquee>
@@ -41,10 +39,16 @@
       <a href="contact.html" class="block py-2 hover-underline">Contact</a>
     </div>
   </header>
+  <body class="font-sans">
+      <div class="real">
+           <p id="datetime"></p>
+    </div>
 
   <section id="home" class="text-center py-16">
+   <a href="image/4.jpg" target="_self" rel="noopener noreferrer">
+  <img src="image/4.jpg" alt="Profile" class="mx-auto rounded-full mb-4 shadow-lg w-40 h-40 object-cover" />
+</a>
 
-    <img src="image/4.jpg" alt="Profile" class="mx-auto rounded-full mb-4 shadow-lg w-40 h-40 object-cover" />
     <h2 class="text-3xl font-bold">Hi, I'm Pradeep Paudel</h2>
     <p class="text-lg text-gray-700">Web Developer & Graphic Designer</p>
     <div class="flex justify-center mt-8">
@@ -56,7 +60,7 @@
     loop autoplay>
   </lottie-player>
     </div>
-    <p class="text-black-700 mt-10 text-justify m-20">Welcome to my personal space online. I create fast, beautiful, and accessible websites with an eye for design and performance.
+    <p class="text-black-700 mt-5 text-justify m-10">Welcome to my personal space online. I create fast, beautiful, and accessible websites with an eye for design and performance.
       Pradip Paudel is a dedicated and creative student currently pursuing his Class 12 under the Nepal Education Board (NEB) with a strong passion for web development and graphic design. He is skilled in crafting responsive websites and visually appealing designs, and he is actively building projects such as a personal portfolio and a multi-page school website.
 
 In addition to his technical interests, Pradip is actively engaged in community service through the Rotaract Club of Parbat, where he has played key roles in organizing major events like the 15th Charter Day and Handover Program. His involvement in Rotaract reflects his leadership, communication, and event management abilities.
@@ -125,6 +129,12 @@ He is known for being self-motivated, detail-oriented, and committed to continuo
       menu.classList.add('hidden');
     });
   });
+  function updateDateTime() {
+      const now = new Date();
+      document.getElementById("datetime").textContent = now.toLocaleString();
+    }
+    setInterval(updateDateTime, 1000); // update every 1 second
+    updateDateTime();
 </script>
 
 </body>
