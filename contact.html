@@ -195,8 +195,6 @@ form.addEventListener('submit', e => {
     return;
   }
 
-  // Show success message
-  successMsg.classList.remove('hidden');
 
   // Collect form data
   const formData = new FormData(form);
@@ -205,11 +203,6 @@ form.addEventListener('submit', e => {
   for (const [key, value] of formData.entries()) {
     params.append(key, value);
   }
-
-  // Delay a bit so user can see success message, then redirect
-  setTimeout(() => {
-    window.location.href = 'details.html?' + params.toString();
-  }, 1500);
 
 });
   </script>
