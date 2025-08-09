@@ -4,221 +4,113 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Pradeep Paudel Portfolio - Contact Details</title>
-  <link rel="stylesheet" href="styles.css" />
-  <script src="https://cdn.tailwindcss.com"></script>
+  <title>Review Your Details - Pradeep Paudel Portfolio</title>
+  <link href="https://cdn.tailwindcss.com" rel="stylesheet" />
 </head>
 
-<body class="font-sans bg-gray-50">
+<body class="bg-gray-50 font-sans">
 
-  <marquee behavior="scroll" direction="left">
-    Welcome to Pradeep Paudel's Portfolio | Web Developer & Graphic Designer
-  </marquee>
+  <main class="container mx-auto max-w-3xl p-6 mt-10 bg-white rounded shadow-md">
 
-  <header class="bg-white shadow-md">
-    <div class="container mx-auto px-4 py-4 flex justify-between items-center">
-      <h1 class="text-xl font-bold">PRADEEP PAUDEL</h1>
-      <div class="hidden md:flex gap-6">
-        <a href="index.html" class="hover:text-indigo-600 transition">Home</a>
-        <a href="about.html" class="hover:text-indigo-600 transition">About</a>
-        <a href="projects.html" class="hover:text-indigo-600 transition">Projects</a>
-        <a href="whyme.html" class="hover:text-indigo-600 transition">Why Me</a>
-        <a href="contact.html" class="hover:text-indigo-600 transition font-semibold underline">Contact</a>
+    <h1 class="text-2xl font-bold text-indigo-700 mb-6 text-center">Review Your Details</h1>
+
+    <form id="final-submit-form" method="POST" action="https://formspree.io/f/xrblyyap" class="space-y-6">
+
+      <!-- Display form data as read-only inputs -->
+
+      <div>
+        <label class="block font-semibold mb-1 text-gray-700">First Name</label>
+        <input type="text" name="firstName" id="firstName" readonly
+          class="w-full border border-gray-300 rounded px-4 py-2 bg-gray-100 cursor-not-allowed" />
       </div>
-      <div class="md:hidden">
-        <button id="menu-toggle" aria-label="Toggle menu">
-          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
-            xmlns="http://www.w3.org/2000/svg">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-              d="M4 6h16M4 12h16M4 18h16"></path>
-          </svg>
-        </button>
-      </div>
-    </div>
-    <div id="mobile-menu" class="md:hidden hidden bg-white px-4 pb-4">
-      <a href="index.html" class="block py-2 hover:text-indigo-600 transition">Home</a>
-      <a href="about.html" class="block py-2 hover:text-indigo-600 transition">About</a>
-      <a href="projects.html" class="block py-2 hover:text-indigo-600 transition">Projects</a>
-      <a href="whyme.html" class="block py-2 hover:text-indigo-600 transition">Why Me</a>
-      <a href="contact.html" class="block py-2 hover:text-indigo-600 transition font-semibold underline">Contact</a>
-    </div>
-  </header>
 
-  <main class="max-w-3xl bg-white p-6 sm:p-8 rounded shadow-md mx-auto flex flex-col gap-6 text-gray-800">
-
-    <div id="details-view">
-      <h2 class="text-2xl font-bold text-indigo-700 mb-4">Contact Details</h2>
-      <p class="text-base sm:text-lg mb-4">Please find below the details you submitted:</p>
-      <div id="details"></div>
-
-      <div class="flex gap-4 mt-6">
-        <button id="edit-btn"
-          class="bg-yellow-500 text-white font-semibold px-6 py-2 rounded shadow transition">
-          Next
-        </button>
-        </div>
-
-      <div class="mt-6 sm:mt-8">
-        <a href="contact.html"
-          class="block sm:inline-block w-full sm:w-auto text-center bg-gray-300 hover:bg-gray-400 text-gray-900 px-6 py-3 rounded shadow transition">
-          Back to Contact Form
-        </a>
-      </div>
-    </div>
-
-    <form id="edit-form" class="hidden flex flex-col gap-4" action="https://formspree.io/f/xrblyyap" method="POST">
-      <h2 class="text-2xl font-bold text-indigo-700 mb-4">Cheak Your Form Clearly</h2>
-
-      <div class="md:flex md:space-x-4">
-        <div class="md:flex-1">
-          <label for="firstName" class="block font-semibold mb-1 text-gray-700">First Name</label>
-          <input id="firstName" name="firstName" type="text" required
-            class="w-full border border-gray-300 rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-400" />
-        </div>
-        <div class="md:flex-1 mt-4 md:mt-0">
-          <label for="surname" class="block font-semibold mb-1 text-gray-700">Surname</label>
-          <input id="surname" name="surname" type="text" required
-            class="w-full border border-gray-300 rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-400" />
-        </div>
+      <div>
+        <label class="block font-semibold mb-1 text-gray-700">Surname</label>
+        <input type="text" name="surname" id="surname" readonly
+          class="w-full border border-gray-300 rounded px-4 py-2 bg-gray-100 cursor-not-allowed" />
       </div>
 
       <div>
         <label class="block font-semibold mb-1 text-gray-700">Gender</label>
-        <div class="flex gap-6">
-          <label class="inline-flex items-center">
-            <input type="radio" id="genderMale" name="gender" value="Male" required class="form-radio text-indigo-600" />
-            <span class="ml-2">Male</span>
-          </label>
-          <label class="inline-flex items-center">
-            <input type="radio" id="genderFemale" name="gender" value="Female" required class="form-radio text-indigo-600" />
-            <span class="ml-2">Female</span>
-          </label>
-          <label class="inline-flex items-center">
-            <input type="radio" id="genderOther" name="gender" value="Other" required class="form-radio text-indigo-600" />
-            <span class="ml-2">Other</span>
-          </label>
-        </div>
+        <input type="text" name="gender" id="gender" readonly
+          class="w-full border border-gray-300 rounded px-4 py-2 bg-gray-100 cursor-not-allowed" />
       </div>
 
       <div>
-        <label for="country" class="block font-semibold mb-1 text-gray-700">Country</label>
-        <select id="country" name="country" required
-          class="w-full border border-gray-300 rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-400">
-          <option value="">-- Select your country --</option>
-          <option value="Nepal">Nepal</option>
-          <option value="India">India</option>
-          <option value="USA">USA</option>
-          <option value="Other">Other</option>
-        </select>
+        <label class="block font-semibold mb-1 text-gray-700">Country</label>
+        <input type="text" name="country" id="country" readonly
+          class="w-full border border-gray-300 rounded px-4 py-2 bg-gray-100 cursor-not-allowed" />
       </div>
 
       <div>
-        <label for="mobile" class="block font-semibold mb-1 text-gray-700">Mobile Number</label>
-        <input id="mobile" name="mobile" type="tel" pattern="[0-9]{10}" placeholder="e.g. 9800000000" required
-          class="w-full border border-gray-300 rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-400" />
+        <label class="block font-semibold mb-1 text-gray-700">Mobile Number</label>
+        <input type="text" name="mobile" id="mobile" readonly
+          class="w-full border border-gray-300 rounded px-4 py-2 bg-gray-100 cursor-not-allowed" />
       </div>
 
       <div>
-        <label for="email" class="block font-semibold mb-1 text-gray-700">Email Address</label>
-        <input id="email" name="email" type="email" required
-          class="w-full border border-gray-300 rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-400" />
+        <label class="block font-semibold mb-1 text-gray-700">Email Address</label>
+        <input type="email" name="email" id="email" readonly
+          class="w-full border border-gray-300 rounded px-4 py-2 bg-gray-100 cursor-not-allowed" />
       </div>
 
       <div>
-        <label for="address" class="block font-semibold mb-1 text-gray-700">Address</label>
-        <input id="address" name="address" type="text" required
-          class="w-full border border-gray-300 rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-400" />
+        <label class="block font-semibold mb-1 text-gray-700">Address</label>
+        <input type="text" name="address" id="address" readonly
+          class="w-full border border-gray-300 rounded px-4 py-2 bg-gray-100 cursor-not-allowed" />
       </div>
 
       <div>
-        <label for="message" class="block font-semibold mb-1 text-gray-700">Your Message</label>
-        <textarea id="message" name="message" rows="5" required
-          class="w-full border border-gray-300 rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-400"></textarea>
+        <label class="block font-semibold mb-1 text-gray-700">Message</label>
+        <textarea name="message" id="message" rows="5" readonly
+          class="w-full border border-gray-300 rounded px-4 py-2 bg-gray-100 cursor-not-allowed"></textarea>
       </div>
 
-      <div class="text-center mt-4">
+      <!-- Checkboxes as hidden inputs with values (since user can't edit) -->
+      <input type="hidden" name="subscribe" id="subscribe" value="on" />
+      <input type="hidden" name="updates" id="updates" value="on" />
+      <input type="hidden" name="terms" id="terms" value="on" />
+      <input type="hidden" name="privacy" id="privacy" value="on" />
+
+      <div class="flex justify-between">
+        <button type="button" id="edit-btn"
+          class="bg-gray-400 hover:bg-gray-500 text-white px-4 py-2 rounded shadow">Edit</button>
+
         <button type="submit"
-          class="bg-indigo-600 hover:bg-indigo-700 text-white font-semibold px-8 py-2 rounded shadow transition">
-          Submit
-        </button>
+          class="bg-indigo-600 hover:bg-indigo-700 text-white px-6 py-2 rounded shadow">Final Submit</button>
       </div>
+
     </form>
 
   </main>
 
   <script>
-    const params = new URLSearchParams(window.location.search);
-    const detailsDiv = document.getElementById('details');
-    const detailsView = document.getElementById('details-view');
-    const editForm = document.getElementById('edit-form');
-    const editBtn = document.getElementById('edit-btn');
-    const submitBtn = document.getElementById('submit-btn');
+    // On load, populate inputs from localStorage
+    window.addEventListener('DOMContentLoaded', () => {
+      const data = JSON.parse(localStorage.getItem('contactFormData') || '{}');
+      if (!data) return;
 
-    // Map field labels for display
-    const labels = {
-      firstName: 'First Name',
-      surname: 'Surname',
-      gender: 'Gender',
-      country: 'Country',
-      mobile: 'Mobile Number',
-      email: 'Email Address',
-      address: 'Address',
-      message: 'Message',
-    };
+      document.getElementById('firstName').value = data.firstName || '';
+      document.getElementById('surname').value = data.surname || '';
+      document.getElementById('gender').value = data.gender || '';
+      document.getElementById('country').value = data.country || '';
+      document.getElementById('mobile').value = data.mobile || '';
+      document.getElementById('email').value = data.email || '';
+      document.getElementById('address').value = data.address || '';
+      document.getElementById('message').value = data.message || '';
 
-    // Store form data from URL
-    const formData = {};
-    for (const key of Object.keys(labels)) {
-      formData[key] = params.get(key) || '';
-    }
-
-    // Display data in details div
-    function displayDetails() {
-      detailsDiv.innerHTML = ''; // Clear previous
-      for (const [key, label] of Object.entries(labels)) {
-        if (!formData[key]) continue;
-        const p = document.createElement('p');
-        p.classList.add('text-base', 'sm:text-lg');
-        p.innerHTML = `<strong>${label}:</strong> ${formData[key]}`;
-        detailsDiv.appendChild(p);
-      }
-    }
-
-    displayDetails();
-
-    // Prefill the edit form inputs with formData
-    function prefillForm() {
-      editForm.firstName.value = formData.firstName;
-      editForm.surname.value = formData.surname;
-      editForm.gender.value = formData.gender;
-      editForm.country.value = formData.country;
-      editForm.mobile.value = formData.mobile;
-      editForm.email.value = formData.email;
-      editForm.address.value = formData.address;
-      editForm.message.value = formData.message;
-
-      // For radio buttons, set checked property accordingly
-      ['Male', 'Female', 'Other'].forEach(g => {
-        const radio = document.getElementById('gender' + g);
-        if (radio) radio.checked = formData.gender === g;
-      });
-    }
-
-    // Show edit form, hide details view
-    editBtn.addEventListener('click', () => {
-      detailsView.style.display = 'none';
-      editForm.classList.remove('hidden');
-      prefillForm();
+      // For checkboxes, set hidden inputs accordingly (you can adjust if needed)
+      // Here assuming all required are checked on contact page
+      document.getElementById('subscribe').value = data.subscribe === 'on' ? 'on' : '';
+      document.getElementById('updates').value = data.updates === 'on' ? 'on' : '';
+      document.getElementById('terms').value = data.terms === 'on' ? 'on' : '';
+      document.getElementById('privacy').value = data.privacy === 'on' ? 'on' : '';
     });
-const dataStr = localStorage.getItem('contactFormData');
-if (dataStr) {
-  const data = JSON.parse(dataStr);
-  // Display data on the page
-}
 
-    // On final submit, the form submits to Formspree endpoint (default)
-    // You can add additional validation or JS here if needed
-
+    // Edit button takes user back to contact page to edit info
+    document.getElementById('edit-btn').addEventListener('click', () => {
+      window.location.href = 'contact.html';
+    });
   </script>
 
 </body>

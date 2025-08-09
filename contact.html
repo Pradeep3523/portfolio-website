@@ -4,206 +4,142 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Pradeep Paudel Portfolio - Contact</title>
-  <link rel="stylesheet" href="styles.css" />
+  <title>Review Your Details - Pradeep Paudel Portfolio</title>
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
-<body class="font-sans bg-gray-50">
+<body class="bg-gray-50 font-sans min-h-screen flex flex-col">
 
-  <marquee behavior="scroll" direction="left">
-    Welcome to Pradeep Paudel's Portfolio | Web Developer & Graphic Designer
-  </marquee>
-
-  <header class="bg-white shadow-md">
-    <div class="container mx-auto px-4 py-4 flex justify-between items-center">
-      <h1 class="text-xl font-bold">PRADEEP PAUDEL</h1>
-      <div class="hidden md:flex gap-6">
+  <header class="bg-white shadow-md py-4">
+    <div class="container mx-auto px-6 flex justify-between items-center">
+      <h1 class="text-2xl font-bold text-indigo-700">Pradeep Paudel</h1>
+      <nav class="space-x-6 text-gray-600 hidden md:flex">
         <a href="index.html" class="hover:text-indigo-600 transition">Home</a>
         <a href="about.html" class="hover:text-indigo-600 transition">About</a>
         <a href="projects.html" class="hover:text-indigo-600 transition">Projects</a>
         <a href="whyme.html" class="hover:text-indigo-600 transition">Why Me</a>
-        <a href="contact.html" class="hover:text-indigo-600 transition font-semibold underline">Contact</a>
-      </div>
-      <div class="md:hidden">
-        <button id="menu-toggle" aria-label="Toggle menu">
-          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
-            xmlns="http://www.w3.org/2000/svg">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-              d="M4 6h16M4 12h16M4 18h16"></path>
-          </svg>
-        </button>
-      </div>
-    </div>
-    <div id="mobile-menu" class="md:hidden hidden bg-white px-4 pb-4">
-      <a href="index.html" class="block py-2 hover:text-indigo-600 transition">Home</a>
-      <a href="about.html" class="block py-2 hover:text-indigo-600 transition">About</a>
-      <a href="projects.html" class="block py-2 hover:text-indigo-600 transition">Projects</a>
-      <a href="whyme.html" class="block py-2 hover:text-indigo-600 transition">Why Me</a>
-      <a href="contact.html" class="block py-2 hover:text-indigo-600 transition font-semibold underline">Contact</a>
+        <a href="contact.html" class="font-semibold underline text-indigo-600">Contact</a>
+      </nav>
     </div>
   </header>
 
-  <main class="container mx-auto max-w-3xl p-6 mt-10 bg-white rounded shadow-md">
+  <main class="container mx-auto max-w-3xl flex-grow p-8 bg-white rounded-lg shadow-md mt-10">
 
-     <form id="contact-form" action="https://formspree.io/f/xrblyyap" method="POST"
-    class="bg-white p-8 rounded shadow-md w-full max-w-lg space-y-6">
-    <h1 class="text-2xl font-bold text-indigo-700 mb-6 text-center">Contact Me</h1>
-  <div class="md:flex md:space-x-4">
-    <div class="md:flex-1">
-      <label for="firstName" class="block font-semibold mb-1 text-gray-700">First Name</label>
-      <input id="firstName" name="firstName" type="text" required
-        class="w-full border border-gray-300 rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-400" />
-    </div>
-    <div class="md:flex-1 mt-4 md:mt-0">
-      <label for="surname" class="block font-semibold mb-1 text-gray-700">Surname</label>
-      <input id="surname" name="surname" type="text" required
-        class="w-full border border-gray-300 rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-400" />
-    </div>
-  </div>
+    <h2 class="text-center text-3xl font-extrabold text-indigo-700 mb-8">Please Review Your Details</h2>
 
-  <div>
-    <label class="block font-semibold mb-1 text-gray-700">Gender</label>
-    <div class="flex gap-6">
-      <label class="inline-flex items-center">
-        <input type="radio" name="gender" value="Male" required class="form-radio text-indigo-600" />
-        <span class="ml-2">Male</span>
-      </label>
-      <label class="inline-flex items-center">
-        <input type="radio" name="gender" value="Female" required class="form-radio text-indigo-600" />
-        <span class="ml-2">Female</span>
-      </label>
-      <label class="inline-flex items-center">
-        <input type="radio" name="gender" value="Other" required class="form-radio text-indigo-600" />
-        <span class="ml-2">Other</span>
-      </label>
-    </div>
-  </div>
+    <form id="final-submit-form" method="POST" action="https://formspree.io/f/xrblyyap" class="space-y-6">
 
-  <div>
-    <label for="country" class="block font-semibold mb-1 text-gray-700">Country</label>
-    <select id="country" name="country" required
-      class="w-full border border-gray-300 rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-400">
-      <option value="">-- Select your country --</option>
-      <option value="Nepal">Nepal</option>
-      <option value="India">India</option>
-      <option value="USA">USA</option>
-      <option value="Other">Other</option>
-    </select>
-  </div>
+      <!-- Group: Name -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div>
+          <label for="firstName" class="block font-semibold text-gray-700 mb-1">First Name</label>
+          <input type="text" id="firstName" name="firstName" readonly
+            class="w-full px-4 py-2 rounded border border-gray-300 bg-gray-100 cursor-not-allowed" />
+        </div>
 
-  <div>
-    <label for="mobile" class="block font-semibold mb-1 text-gray-700">Mobile Number</label>
-    <input id="mobile" name="mobile" type="tel" pattern="[0-9]{10}" placeholder="e.g. 9800000000" required
-      class="w-full border border-gray-300 rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-400" />
-  </div>
-
-  <div>
-    <label for="email" class="block font-semibold mb-1 text-gray-700">Email Address</label>
-    <input id="email" name="email" type="email" required
-      class="w-full border border-gray-300 rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-400" />
-  </div>
-
-  <div>
-    <label for="address" class="block font-semibold mb-1 text-gray-700">Address</label>
-    <input id="address" name="address" type="text" required
-      class="w-full border border-gray-300 rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-400" />
-  </div>
-
-  <div>
-    <label for="message" class="block font-semibold mb-1 text-gray-700">Your Message</label>
-    <textarea id="message" name="message" rows="5" required
-      class="w-full border border-gray-300 rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-400"></textarea>
-  </div>
-
-  <div class="space-y-2 text-gray-700">
-    <label class="inline-flex items-center">
-      <input type="checkbox" name="subscribe" required class="form-checkbox text-indigo-600" />
-      <span class="ml-2">Subscribe to newsletter</span>
-    </label>
-    <label class="inline-flex items-center">
-      <input type="checkbox" name="updates" required class="form-checkbox text-indigo-600" />
-      <span class="ml-2">Send me updates about new projects</span>
-    </label>
-    <label class="inline-flex items-center">
-      <input type="checkbox" name="terms" required class="form-checkbox text-indigo-600" />
-      <span class="ml-2">I agree to the terms and conditions</span>
-    </label>
-    <label class="inline-flex items-center">
-      <input type="checkbox" name="privacy" required class="form-checkbox text-indigo-600" />
-      <span class="ml-2">I agree to the privacy policy</span>
-    </label>
-  </div>
-  <a href="details.html" >
-    <button type="submit"
-      class="bg-indigo-600 hover:bg-indigo-700 text-white font-semibold px-8 py-2 rounded shadow transition">
-      Next
-    </button>
-    </a>
-  <div class="text-center mt-6">
-    <p class="text-sm text-gray-500 mt-2">* All fields are required.</p>
-  </div>
-</form>
-  </main>
-   <div class="flex justify-end max-w-2xl mx-auto mt-4">
-    <a href="index.html" class="text-white bg-indigo-600 hover:bg-indigo-700 px-4 py-2 rounded shadow">
-      Home
-    </a>
-  </div>
-
-  <footer class="bg-gradient-to-r from-indigo-100 via-purple-100 to-pink-100 py-8 mt-16">
-    <div class="max-w-4xl mx-auto flex flex-col items-center space-y-4 px-4 text-center">
-      <img src="image/4.jpg" alt="Pradeep Logo"
-        class="w-16 h-16 rounded-full shadow-lg border border-gray-300" />
-      <h2 class="text-xl font-semibold text-gray-800">Pradeep Paudel</h2>
-      <div class="flex space-x-6 mt-2">
-        <a href="https://www.facebook.com/pradeep07pdl" target="_blank"
-          class="text-blue-600 hover:text-blue-800 transition">
-          <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
-            <path
-              d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 5 3.657 9.127 8.438 9.878v-6.988H7.898v-2.89h2.54V9.797c0-2.506 1.493-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.242 0-1.63.771-1.63 1.562v1.875h2.773l-.443 2.89h-2.33v6.988C18.343 21.127 22 17 22 12z" />
-          </svg>
-        </a>
-        <a href="https://wa.me/9779765671782" target="_blank" class="text-green-500 hover:text-green-600 transition">
-          <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 32 32">
-            <path
-              d="M16 2C8.27 2 2 8.27 2 16a13.91 13.91 0 002.05 7.24L2 30l6.9-1.94A13.92 13.92 0 0016 30c7.73 0 14-6.27 14-14S23.73 2 16 2zm7.9 19.1l-2.1.65a1.4 1.4 0 01-1.6-.6l-.8-1.2a10.2 10.2 0 01-4.8-4.8l-1.2-.8a1.4 1.4 0 01-.6-1.6l.65-2.1a.6.6 0 01.65-.45h1.3a.6.6 0 01.6.45l.65 1.9a.6.6 0 01-.15.6L14 13.2a9.4 9.4 0 004.8 4.8l1.25-.75a.6.6 0 01.6-.15l1.9.65a.6.6 0 01.45.6v1.3a.6.6 0 01-.45.65z" />
-          </svg>
-        </a>
-        <a href="https://www.linkedin.com/in/pradip-paudel-5512a0372/" target="_blank"
-          class="text-blue-500 hover:text-blue-700 transition">
-          <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
-            <path
-              d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5zM0 8h5v16H0V8zm7.5 0h4.8v2.2h.07c.67-1.26 2.3-2.6 4.73-2.6 5.06 0 6 3.33 6 7.66V24h-5v-6.4c0-1.53-.03-3.5-2.13-3.5s-2.46 1.67-2.46 3.4V24h-5V8z" />
-          </svg>
-        </a>
+        <div>
+          <label for="surname" class="block font-semibold text-gray-700 mb-1">Surname</label>
+          <input type="text" id="surname" name="surname" readonly
+            class="w-full px-4 py-2 rounded border border-gray-300 bg-gray-100 cursor-not-allowed" />
+        </div>
       </div>
-      <p class="text-sm text-gray-500 mt-4">&copy; 2025 Pradeep Paudel. All rights reserved.</p>
-    </div>
+
+      <!-- Gender -->
+      <div>
+        <label for="gender" class="block font-semibold text-gray-700 mb-1">Gender</label>
+        <input type="text" id="gender" name="gender" readonly
+          class="w-full px-4 py-2 rounded border border-gray-300 bg-gray-100 cursor-not-allowed" />
+      </div>
+
+      <!-- Country -->
+      <div>
+        <label for="country" class="block font-semibold text-gray-700 mb-1">Country</label>
+        <input type="text" id="country" name="country" readonly
+          class="w-full px-4 py-2 rounded border border-gray-300 bg-gray-100 cursor-not-allowed" />
+      </div>
+
+      <!-- Mobile Number -->
+      <div>
+        <label for="mobile" class="block font-semibold text-gray-700 mb-1">Mobile Number</label>
+        <input type="text" id="mobile" name="mobile" readonly
+          class="w-full px-4 py-2 rounded border border-gray-300 bg-gray-100 cursor-not-allowed" />
+      </div>
+
+      <!-- Email -->
+      <div>
+        <label for="email" class="block font-semibold text-gray-700 mb-1">Email Address</label>
+        <input type="email" id="email" name="email" readonly
+          class="w-full px-4 py-2 rounded border border-gray-300 bg-gray-100 cursor-not-allowed" />
+      </div>
+
+      <!-- Address -->
+      <div>
+        <label for="address" class="block font-semibold text-gray-700 mb-1">Address</label>
+        <input type="text" id="address" name="address" readonly
+          class="w-full px-4 py-2 rounded border border-gray-300 bg-gray-100 cursor-not-allowed" />
+      </div>
+
+      <!-- Message -->
+      <div>
+        <label for="message" class="block font-semibold text-gray-700 mb-1">Your Message</label>
+        <textarea id="message" name="message" rows="5" readonly
+          class="w-full px-4 py-2 rounded border border-gray-300 bg-gray-100 cursor-not-allowed resize-none"></textarea>
+      </div>
+
+      <!-- Hidden checkboxes (for Formspree) -->
+      <input type="hidden" name="subscribe" id="subscribe" value="on" />
+      <input type="hidden" name="updates" id="updates" value="on" />
+      <input type="hidden" name="terms" id="terms" value="on" />
+      <input type="hidden" name="privacy" id="privacy" value="on" />
+
+      <!-- Buttons -->
+      <div class="flex justify-between mt-8">
+        <button type="button" id="edit-btn"
+          class="px-6 py-2 bg-gray-400 rounded shadow text-white hover:bg-gray-500 transition">Edit</button>
+
+        <button type="submit"
+          class="px-8 py-2 bg-indigo-600 rounded shadow text-white hover:bg-indigo-700 transition">Final Submit</button>
+      </div>
+
+    </form>
+
+  </main>
+
+  <footer class="bg-gradient-to-r from-indigo-100 via-purple-100 to-pink-100 py-8 mt-16 text-center text-gray-600">
+    &copy; 2025 Pradeep Paudel. All rights reserved.
   </footer>
 
   <script>
-     const form = document.getElementById('contact-form');
+    // Populate form from localStorage on page load
+    window.addEventListener('DOMContentLoaded', () => {
+      const data = JSON.parse(localStorage.getItem('contactFormData') || '{}');
 
-form.addEventListener('submit', e => {
-  e.preventDefault();
+      if (!data) {
+        alert('No form data found. Please fill the contact form first.');
+        window.location.href = 'contact.html';
+        return;
+      }
 
-  if (!form.checkValidity()) {
-    form.reportValidity();
-    return;
-  }
+      // Fill readonly inputs
+      const fields = ['firstName', 'surname', 'gender', 'country', 'mobile', 'email', 'address', 'message'];
+      fields.forEach(field => {
+        const el = document.getElementById(field);
+        if (el) el.value = data[field] || '';
+      });
 
+      // Set hidden checkboxes (assume "on" if present)
+      ['subscribe', 'updates', 'terms', 'privacy'].forEach(name => {
+        const hiddenEl = document.getElementById(name);
+        if (hiddenEl) hiddenEl.value = data[name] === 'on' ? 'on' : '';
+      });
+    });
 
-  // Collect form data
-  const formData = new FormData(form);
-  const params = new URLSearchParams();
-
-  for (const [key, value] of formData.entries()) {
-    params.append(key, value);
-  }
-
-});
+    // Edit button: back to contact page
+    document.getElementById('edit-btn').addEventListener('click', () => {
+      window.location.href = 'contact.html';
+    });
   </script>
+
 </body>
 
 </html>
